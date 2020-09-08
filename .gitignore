@@ -1,0 +1,21 @@
+# Exclude PHPStorm indexing files
+/.idea
+
+# Exclude OSX index files
+.DS_Store
+
+# Composer
+/.Build/*
+composer.lock
+
+# TYPO3 9
+/var
+
+# Coding style
+/.php_cs.cache
+
+code-coverage/
+
+# Documentation
+/Documentation-GENERATED-temp
+/tempfile.sh
