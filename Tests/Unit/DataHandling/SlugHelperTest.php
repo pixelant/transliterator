@@ -605,7 +605,12 @@ class SlugHelperTest extends UnitTestCase
                 ]
             ],
             'combine two fallbacks' => [
-                ['title' => 'Products', 'nav_title' => 'Best products', 'subtitle' => 'Product subtitle', 'seo_title' => 'SEO product title'],
+                [
+                    'title' => 'Products',
+                    'nav_title' => 'Best products',
+                    'subtitle' => 'Product subtitle',
+                    'seo_title' => 'SEO product title'
+                ],
                 '/seo-product-title/best-products',
                 [
                     'generatorOptions' => [

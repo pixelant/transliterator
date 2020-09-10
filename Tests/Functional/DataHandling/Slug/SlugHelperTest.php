@@ -80,7 +80,10 @@ class SlugHelperTest extends AbstractDataHandlerActionTestCase
 
         $this->importScenarioDataSet('Pages');
         $this->setUpFrontendSite(1, $this->siteLanguageConfiguration);
-        $this->setUpFrontendRootPage(1, ['typo3/sysext/core/Tests/Functional/Fixtures/Frontend/JsonRenderer.typoscript']);
+        $this->setUpFrontendRootPage(
+            1,
+            ['typo3/sysext/core/Tests/Functional/Fixtures/Frontend/JsonRenderer.typoscript']
+        );
     }
 
     /**
