@@ -55,7 +55,7 @@ jobs:
       matrix:
         typo3-version:
           - "^9.5"
-          - "^10.2"
+          - "^10.4"
         composer-dependencies:
           - highest
           - lowest
