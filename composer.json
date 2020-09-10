@@ -43,9 +43,6 @@
 	},
 	"prefer-stable": true,
 	"config": {
-		"platform": {
-			"php": "7.2.5"
-		},
 		"vendor-dir": "build/vendor",
 		"optimize-autoloader": true,
 		"sort-packages": true
