@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 class SlugHelper extends \TYPO3\CMS\Core\DataHandling\SlugHelper
 {
@@ -88,7 +89,15 @@ class SlugHelper extends \TYPO3\CMS\Core\DataHandling\SlugHelper
         $languageService = GeneralUtility::makeInstance(LanguageService::class);
         $languageService->init($this->language->getTypo3Language());
 
-        $symbolLabels = $languageService->includeLLFile(static::SYMBOL_MAPPING_FILE_PATH);
+        if (
+            VersionNumberUtility::convertVersionNumberToInteger(
+                VersionNumberUtility::getCurrentTypo3Version()
+            ) < 10000000
+        ) {
+            $symbolLabels = $languageService->includeLLFile(static::SYMBOL_MAPPING_FILE_PATH, false);
+        } else {
+            $symbolLabels = $languageService->includeLLFile(static::SYMBOL_MAPPING_FILE_PATH);
+        }
 
         $symbolsMap = [];
         foreach (array_pop($symbolLabels) ?? [] as $symbol => $value) {
