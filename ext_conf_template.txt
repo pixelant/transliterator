@@ -1,0 +1,5 @@
+# cat=Localization; type=string; label=Default TYPO3 ASCII transliteration language
+defaultLanguage = default
+
+# cat=Localization; type=boolean; label=Enable symbol mapping based on default language
+enableSymbolsMap = 0

@@ -2,6 +2,7 @@
 
 namespace Pixelant\Transliterator\DataHandling;
 
+use Pixelant\Transliterator\Utility\LocalizationUtility;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use TYPO3\CMS\Core\Configuration\SiteConfiguration;
 use TYPO3\CMS\Core\Localization\LanguageService;
@@ -14,8 +15,6 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 class SlugHelper extends \TYPO3\CMS\Core\DataHandling\SlugHelper
 {
-    protected const SYMBOL_MAPPING_FILE_PATH = 'EXT:transliterator/Resources/Private/Language/symbolMapping.xlf';
-
     /**
      * @var SiteLanguage
      */
@@ -85,25 +84,6 @@ class SlugHelper extends \TYPO3\CMS\Core\DataHandling\SlugHelper
 
     protected function getSymbolsMap(): array
     {
-        /** @var LanguageService $languageService */
-        $languageService = GeneralUtility::makeInstance(LanguageService::class);
-        $languageService->init($this->language->getTypo3Language());
-
-        if (
-            VersionNumberUtility::convertVersionNumberToInteger(
-                VersionNumberUtility::getCurrentTypo3Version()
-            ) < 10000000
-        ) {
-            $symbolLabels = $languageService->includeLLFile(static::SYMBOL_MAPPING_FILE_PATH, false);
-        } else {
-            $symbolLabels = $languageService->includeLLFile(static::SYMBOL_MAPPING_FILE_PATH);
-        }
-
-        $symbolsMap = [];
-        foreach (array_pop($symbolLabels) ?? [] as $symbol => $value) {
-            $symbolsMap[$symbol] = ($value[0]['target'] ?? $value[0]['source']) ?? '';
-        }
-
-        return $symbolsMap;
+        return LocalizationUtility::getSymbolsMap($this->language->getTypo3Language());
     }
 }
