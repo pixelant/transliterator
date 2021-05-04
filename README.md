@@ -7,3 +7,5 @@ This extension makes heavy use of the AsciiSlug class in symfony/string. This im
 the page language to determine how to transliterate the string, so & can be transliterated as "og" 
 in Norwegian and "und" in German. Of course, as current language information isn't available 
 everywhere in TYPO3, this only works where we can detect the language.
+
+Related TYPO3 Forge issue: https://forge.typo3.org/issues/20612
