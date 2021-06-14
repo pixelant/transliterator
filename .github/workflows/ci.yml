@@ -81,17 +81,6 @@ jobs:
           - 7.3
           - 7.4
 
-    services:
-      mysql:
-        image: mariadb:latest
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
-          MYSQL_DATABASE: typo3
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_USER: user
-        ports:
-          - 3306
-
     steps:
       - name: Configure PHP ${{ matrix.php-version }}
         uses: shivammathur/setup-php@v2
