@@ -22,7 +22,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-    
+
       - name: Checkout
         uses: actions/checkout@v1
 
@@ -34,12 +34,19 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php-version:
+          - 7.2
+          - 7.3
+          - 7.4
+
     steps:
       - name: Configure PHP ${{ matrix.php-version }}
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-    
+
       - name: Checkout
         uses: actions/checkout@v1
 
@@ -75,6 +82,12 @@ jobs:
           - 7.4
 
     steps:
+      - name: Configure PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: fileinfo, filter, gd, hash, intl, json, mbstring, mysqli, openssl, pcre, session, SPL, xml, zip, zlib
+
       - name: Checkout
         uses: actions/checkout@v1
 
