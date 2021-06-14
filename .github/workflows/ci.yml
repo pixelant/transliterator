@@ -22,7 +22,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-    
+
       - name: Checkout
         uses: actions/checkout@v1
 
@@ -39,7 +39,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-    
+
       - name: Checkout
         uses: actions/checkout@v1
 
