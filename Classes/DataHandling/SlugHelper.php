@@ -66,10 +66,6 @@ class SlugHelper extends \TYPO3\CMS\Core\DataHandling\SlugHelper
 
     public function generate(array $recordData, int $pid): string
     {
-        if ($pid === 0 || (!empty($recordData['is_siteroot']) && $this->tableName === 'pages')) {
-            return parent::generate($recordData, $pid);
-        }
-
         $languageFieldName = $GLOBALS['TCA'][$this->tableName]['ctrl']['languageField'] ?? null;
         $languageId = (int)($recordData[$languageFieldName] ?? 0);
 
