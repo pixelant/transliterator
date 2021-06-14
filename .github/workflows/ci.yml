@@ -86,7 +86,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          extensions: mbstring, intl, PDO, json, pcre, session, xml, filter, hash, SPL, standard, fileinfo, gd, zip, zlib, openssl
+          extensions: fileinfo, filter, gd, hash, intl, json, mbstring, mysqli, openssl, pcre, session, SPL, xml, zip, zlib
 
       - name: Checkout
         uses: actions/checkout@v1
