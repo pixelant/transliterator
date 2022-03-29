@@ -24,8 +24,7 @@
 		"docs": "https://github.com/pixelant/transliterator"
 	},
 	"require": {
-		"php": "^7.2",
-		"typo3/cms-core": "^9.5.20 || ^10.4.6",
+		"typo3/cms-core": "^9.5.20 || ^10.4.6 || ^11.5",
 		"symfony/translation-contracts": "^2.2",
 		"symfony/string": "^5.1"
 	},
