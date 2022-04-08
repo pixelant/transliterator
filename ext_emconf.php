@@ -3,7 +3,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Transliterator',
     'description' => 'Better transliteration in TYPO3 slugs, etc.',
-    'version' => '0.1.0-alpha.9',
+    'version' => '0.1.0-alpha.10',
     'category' => 'fe',
     'constraints' => [
         'depends' => [
