@@ -77,6 +77,7 @@
 	},
 	"extra": {
 		"typo3/cms": {
+			"extension-key": "transliterator",
 			"web-dir": "build/public",
 			"app-dir": "build"
 		}
